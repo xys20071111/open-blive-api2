@@ -1,6 +1,6 @@
 {
   "name": "open-blive-api2",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "B站直播开放平台非官方sdk",
   "main": "dist/index.js",
   "repository": "https://github.com/xys20071111/open-blive-api2.git",
@@ -10,6 +10,10 @@
   "dependencies": {
     "uuid": "^8.3.2",
     "ws": "^8.7.0"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "prepack": "tsc"
   },
   "devDependencies": {
     "@types/node": "^17.0.36",

@@ -41,6 +41,10 @@ export class DanmakuReceiver extends EventEmitter {
                 this.socket.send(authPacket);
             }
         });
+        this.socket.on('error', () => {
+            console.log('与弹幕服务器之间的连接发生错误')
+            this.emit('close');
+        });
     }
 
     private generatePacket(protocol: number, type: number, payload: string | Buffer): Buffer {

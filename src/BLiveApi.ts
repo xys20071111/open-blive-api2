@@ -71,7 +71,9 @@ export function request(info: IRequestInfomation, body: string) {
 				'Authorization': hmac.update(signString).digest('hex')
 			}
 		})
-
+		req.on('error', () => {
+			reject(1234567890)
+		})
 		req.on('response', (res) => {
 			res.setEncoding('utf-8')
 			let jsonString = ''
